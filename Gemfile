@@ -19,6 +19,17 @@ gem 'omniauth-rails_csrf_protection', '~> 0.1'
 # Gemfile
 gem 'webpacker', '~> 4.x'
 
+# The ruby implementation of the GraphQL language.
+gem 'graphql'
+
+group :development do
+  # A development utility to test GraphQL queries.
+  gem 'graphiql-rails'
+
+  # Seed data generator
+  gem 'faker'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

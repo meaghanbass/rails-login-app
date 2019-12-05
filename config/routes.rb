@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/logout' => 'logout#logout'
 
+  resources :articles
+
   root 'home#show'
 
   # The priority is based upon order of creation: first created -> highest priority.

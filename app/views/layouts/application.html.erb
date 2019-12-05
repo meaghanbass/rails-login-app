@@ -42,11 +42,18 @@
   </nav>
 
   <section class="bg-white w-1/2 p-6 m-auto border border-gray-400 text-center">
-    <%= yield %>
+    <%= yield :welcome %>
   </section>
 
-  <div class="container">
-    <p>Container</p>
+  <div class="container flex">
+    <aside class="queryListings bg-pink-300 p-6">
+      <p>Aside</p>
+      <p>line</p>
+      <% if session[:userinfo] %>
+        <p>private</p>
+      <% end %>
+    </aside>
+    <div class="contentWrapper bg-yellow-300 w-full p-6">Content Wrapper</div>
   </div>
 
 </body>
