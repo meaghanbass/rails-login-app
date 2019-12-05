@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.accent-color {
+    background: #7A97E1;
+}

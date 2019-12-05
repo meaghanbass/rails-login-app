@@ -12,33 +12,42 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body class="bg-gray-300">
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">My Application</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="<%= 'active' if params[:controller] == 'home' %>"><a href="/">Home</a></li>
-            <li class="<%= 'active' if params[:controller] == 'dashboard' %>"><a href="/dashboard">My Dashboard</a></li>
-          </ul>
-          <% if session[:userinfo] %>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="<%= 'active' if params[:controller] == 'logout' %>"><a id="qsLogoutBtn" href="/logout">Logout</a></li>
-            </ul>
-          <% end %>
-        </div>
+<body>
+  <nav class="navbar accent-color text-white navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Application</a>
       </div>
-    </nav>
-  <div class="container">
+      <div id="navbar" class="navbar-collapse collapse flex">
+        <ul class="nav navbar-nav">
+          <li class="<%= 'active' if params[:controller] == 'home' %>"><a href="/">Home</a></li>
+          <li class="<%= 'active' if params[:controller] == 'dashboard' %>"><a href="/dashboard">Account Dashboard</a></li>
+        </ul>
+        <% if session[:userinfo] %>
+          <ul class="nav navbar-nav navbar-right">
+            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-4 px-8 rounded inline-flex mt-2 float-right <%= 'active' if params[:controller] == 'logout' %>"><a id="qsLogoutBtn" href="/logout">Logout</a></button>
+          </ul>
+        <% end %>
+        <% if session[:userinfo].nil? %>
+          <%= button_to 'Login', 'auth/auth0', method: :post, class: 'bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-4 px-8 rounded inline-flex mt-2 float-right', id: 'qsLoginBtn' %>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bg-white w-1/2 p-6 m-auto border border-gray-400 text-center">
     <%= yield %>
+  </section>
+
+  <div class="container">
+    <p>Container</p>
   </div>
+
 </body>
 </html>

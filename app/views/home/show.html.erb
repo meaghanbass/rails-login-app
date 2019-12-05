@@ -1,6 +1,12 @@
-<section class="jumbotron text-center">
-  <h2><img class="jumbo-thumbnail" src="https://cdn.auth0.com/styleguide/1.0.0/img/badge.svg"></h2>
+<% 
+=begin %>
+<section class="jumbotron bg-white border border-gray-400 text-center">
   <h1>Rails Auth0 App</h1>
-  <p>Step 1 - Login.</p>
-  <%= button_to 'Login', 'auth/auth0', method: :post, class: 'btn btn-success btn-lg', id: 'qsLoginBtn' %>
+  <br>
+  <%= button_to 'Login', 'auth/auth0', method: :post, class: 'bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-4 px-8 rounded inline-flex items-center', id: 'qsLoginBtn' %>
+  <h3>Landing Page (logged out)</h3>
 </section>
+  <% 
+=end %>
+
+<h3 class="text-2xl">Landing Page (logged out)</h3>
