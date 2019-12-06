@@ -22,14 +22,6 @@ gem 'webpacker', '~> 4.x'
 # The ruby implementation of the GraphQL language.
 gem 'graphql'
 
-group :development do
-  # A development utility to test GraphQL queries.
-  gem 'graphiql-rails'
-
-  # Seed data generator
-  gem 'faker'
-end
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -45,7 +37,15 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry'
   gem 'dotenv', '~> 0.11.1'
+
+  # A development utility to test GraphQL queries.
+  gem 'graphiql-rails'
+
+  # Seed data generator
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# gem 'graphiql-rails', group: :development
