@@ -2,6 +2,20 @@
 
 https://stackoverflow.com/questions/7788946/rails-keeps-telling-me-that-its-not-currently-installed
 
+`$ rvm gemset list_all
+
+
+gemsets for ruby-1.8.7-p352 (found in /Users/asgeo1/.rvm/gems/ruby-1.8.7-p352)
+global
+
+
+gemsets for ruby-1.9.2-p290 (found in /Users/asgeo1/.rvm/gems/ruby-1.9.2-p290)
+global
+rails31
+
+
+$ rvm use ruby-1.9.2-p290@rails31`
+
 
 # Resources
 
