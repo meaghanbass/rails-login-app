@@ -29,11 +29,3 @@ module RubyOnRailsWebapp
     # config.i18n.default_locale = :de
   end
 end
-
-
-config.middleware.insert_before 0, Rack::Cors do
-  allow do
-    origins '*'
-    resource '*', headers: :any, methods: [:get, :post, :options]
-  end
-end
