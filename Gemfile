@@ -43,6 +43,9 @@ group :development do
 
   # Seed data generator
   gem 'faker'
+
+  # For React with rails
+  gem 'rack-cors'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
